@@ -28,8 +28,7 @@ BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam)
 }
 
 
-
-int winshake(int ARG_ONLY_LEFT, int ARG_WAY) 
+void winshake(int ARG_ONLY_LEFT, int ARG_WAY) 
 {
     ONLY_LEFT = ARG_ONLY_LEFT;
     WAY = ARG_WAY;
@@ -37,6 +36,4 @@ int winshake(int ARG_ONLY_LEFT, int ARG_WAY)
     {
         EnumWindows(EnumWindowsProc, 0);
     }
-    
-    return 0;
 }
