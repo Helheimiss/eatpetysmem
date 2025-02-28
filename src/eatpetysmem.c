@@ -1,13 +1,9 @@
 #include <stdlib.h>
 #include <pthread.h>
+#include "thr_func.h"
 
 
 #define THREAD_COUNT 2077
-
-
-// from thr_func.c
-void *thread_function_1(void *arg);
-void *thread_function_2(void *arg);
 
 
 void eatpetysmem(void) 
@@ -18,7 +14,9 @@ void eatpetysmem(void)
     for (int i = 0; i < THREAD_COUNT; i++) 
     {
         pthread_create(&threads[i], NULL, thread_function_1, NULL);
-        pthread_create(&threads[i], NULL, thread_function_2, NULL);
+        #if C_OS == 1
+            pthread_create(&threads[i], NULL, thread_function_2, NULL);
+        #endif
     }
 
 

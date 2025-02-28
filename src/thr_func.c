@@ -1,34 +1,35 @@
 #include <stdlib.h>
+#include "thr_func.h"
 
 
-// #define WINDOWS_STP
-#ifdef WINDOWS_STP
-    #include <Windows.h>
+#if C_OS == 1
+    // from winshake.c
+    void winshake(int ARG_ONLY_LEFT, int ARG_WAY);
 #endif
 
 
-// from winshake.c
-void winshake(int ARG_ONLY_LEFT, int ARG_WAY);
-
-
-char *ptr = NULL;
+char *ptr1 = NULL;
+char *ptr2 = NULL;
 
 
 void *thread_function_1(void *arg) 
 {
     while (1)
     {
-        ptr = malloc(1);
-        *ptr = CHAR_MAX;
-        #ifdef WINDOWS_STP
-            SetCursorPos(2077, 2077);
-        #endif
+        ptr1 = malloc(1);
+        *ptr1 = 127;
+        if (ptr1 != NULL)
+        {
+            free(ptr1);
+        }
+        
     }
 
     return NULL;
 }
 
 
+#if C_OS == 1
 void *thread_function_2(void *arg) 
 {
     while (1)
@@ -38,3 +39,4 @@ void *thread_function_2(void *arg)
 
     return NULL;
 }
+#endif

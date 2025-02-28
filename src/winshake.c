@@ -12,7 +12,6 @@ void ShakeWindow(HWND hwnd)
     
     
     SetWindowPos(hwnd, NULL, rect.left + WAY, rect.top, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
-    // Sleep(1);
     if (ONLY_LEFT == 0) SetWindowPos(hwnd, NULL, rect.left, rect.top, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
     return;
 }
