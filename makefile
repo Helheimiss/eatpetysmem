@@ -3,7 +3,7 @@ ARCH ?= 32
 OS ?= win
 
 
-SRC = ./src/main.c ./src/eatpetysmem.c ./src/thr_func.c ./src/thr_func.h ./src/winshake.c
+SRC = ./src/main.c ./src/eatpetysmem.c ./src/thr_func.c ./include/thr_func.h ./src/winshake.c
 CFLAGS = -Wall -O3 -s -g0 -pthread -mwindows -fomit-frame-pointer -fdata-sections -ffunction-sections -Wl,--gc-sections
 
 

@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "thr_func.h"
+#include "../include/thr_func.h"
 
 
 #if C_OS == 1

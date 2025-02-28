@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <pthread.h>
-#include "thr_func.h"
+#include "../include/thr_func.h"
 
 
 #define THREAD_COUNT 2077
